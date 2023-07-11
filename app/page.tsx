@@ -28,6 +28,7 @@ export default function Home() {
     if (validMemberData) {
       register(member).then(() => {
         setIsLoading(false);
+        setIsRegistered(true);
         const storeValue = {
           isRegistered: true,
           email: emailRef.current?.value,
@@ -45,7 +46,7 @@ export default function Home() {
     } else {
       setIsRegistered(false);
     }
-  }, []);
+  }, [isRegistered]);
 
   return (
     <main>
