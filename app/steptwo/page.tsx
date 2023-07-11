@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { requirements } from "@/assets";
-import { Footer } from "../components";
-import Link from "next/link";
-import { ChevronRightCircle } from "react-iconly";
+import { requirements } from '@/assets';
+import { Footer } from '../components';
+import Link from 'next/link';
+import { ChevronRightCircle } from 'react-iconly';
 
 export default function StepTwo() {
   return (
@@ -32,8 +32,8 @@ export default function StepTwo() {
                 {requirements.map((item, index) => {
                   return (
                     <tr
-                      key={`${item.name}_${index}`}
                       className="border-b-1 border-neutral-300"
+                      key={`${item.name}_${index}`}
                     >
                       <th className="text-sky-500">{index + 1}</th>
                       <td className="text-[rgb(40,116,252)] font-semibold">
@@ -49,18 +49,18 @@ export default function StepTwo() {
           <div className="card bg-base-100 glass my-10 mx-2 max-w-xl">
             <div className="card-body">
               <span className="text-neutral-100 text-lg">
-                Complete all the requirements then proceed to{" "}
+                Complete all the requirements then proceed to{' '}
                 <span className="font-semibold">Step 3.</span>
               </span>
             </div>
             <div className="form-control my-3 mx-3">
               <Link
-                href="/stepthree"
                 className="btn bg-[rgb(40,116,252)] border-0"
+                href="/stepthree"
                 type="submit"
               >
                 <span className="mx-5 text-neutral-100">Proceed to Step 3</span>
-                <ChevronRightCircle set="bold" primaryColor="moccasin" />
+                <ChevronRightCircle primaryColor="moccasin" set="bold" />
               </Link>
             </div>
           </div>

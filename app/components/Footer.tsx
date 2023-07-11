@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { Send } from "react-iconly";
+import { Send } from 'react-iconly';
+import Link from 'next/link';
 
 export const Footer = () => (
   <div className=" my-10 flex flex-row justify-center">
@@ -7,7 +7,7 @@ export const Footer = () => (
       People. Process. Technology.
     </h1>
     <Link href="https://comptrolla.com">
-      <Send set="bold" primaryColor="rgb(0,208,130)" />
+      <Send primaryColor="rgb(0,208,130)" set="bold" />
     </Link>
   </div>
 );

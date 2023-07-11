@@ -1,13 +1,11 @@
-"use client";
-import { FormEvent, useEffect, useRef, useState } from "react";
-import { emailValidator, phoneValidator, register } from "@/utils";
-import { Header, Form, Footer, Nav, Registered, Toaster } from "./components";
-import { CloseSquare } from "react-iconly";
+'use client';
+import { FormEvent, useEffect, useRef, useState } from 'react';
+import { emailValidator, phoneValidator, register } from '@/utils';
+import { Footer, Form, Header, Nav, Registered, Toaster } from './components';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
-  const [registeredEmail, setRegisteredEmail] = useState();
   const [invalidEmail, setInvalidEmail] = useState(false);
   const [invalidPhone, setInvalidPhone] = useState(false);
   const nameRef = useRef<HTMLInputElement>(null);
@@ -32,15 +30,15 @@ export default function App() {
       name: nameRef.current?.value as string,
       email: emailValidator(emailRef.current?.value as string)
         ? (emailRef.current?.value as string)
-        : "",
+        : '',
       phone: phoneValidator(phoneRef.current?.value as string)
         ? (phoneRef.current?.value as string)
-        : "",
+        : '',
       // * Member Type
-      type: "bookkeeper",
+      type: 'bookkeeper',
     };
 
-    const validMemberData = !Object.values(member).includes("");
+    const validMemberData = !Object.values(member).includes('');
 
     if (validMemberData) {
       register(member).then(() => {
@@ -50,13 +48,13 @@ export default function App() {
           isRegistered: true,
           email: emailRef.current?.value,
         };
-        localStorage.setItem("comptrolla", JSON.stringify(storeValue));
+        localStorage.setItem('comptrolla', JSON.stringify(storeValue));
       });
     }
   };
 
   useEffect(() => {
-    const inStore = localStorage.getItem("comptrolla");
+    const inStore = localStorage.getItem('comptrolla');
     if (inStore !== null) {
       setIsRegistered(true);
     } else {
@@ -74,11 +72,11 @@ export default function App() {
             <Registered />
           ) : (
             <Form
-              nameRef={nameRef}
               emailRef={emailRef}
-              phoneRef={phoneRef}
-              isLoading={isLoading}
               handleSubmit={handleSubmit}
+              isLoading={isLoading}
+              nameRef={nameRef}
+              phoneRef={phoneRef}
             />
           )}
 

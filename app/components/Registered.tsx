@@ -1,20 +1,13 @@
-"use client";
-import { concealEmail } from "@/utils/register";
-import Link from "next/link";
-import { FC, FormEvent, LegacyRef, useEffect, useState } from "react";
-import { ChevronRightCircle, Message } from "react-iconly";
-import { Toaster } from "./Toaster";
+'use client';
+import { useEffect, useState } from 'react';
+import { concealEmail } from '@/utils/register';
+import Link from 'next/link';
+import { ChevronRightCircle, Message } from 'react-iconly';
+import { Toaster } from './Toaster';
 
-interface FormProps {
-  nameRef: LegacyRef<HTMLInputElement>;
-  emailRef: LegacyRef<HTMLInputElement>;
-  phoneRef: LegacyRef<HTMLInputElement>;
-  isLoading: boolean;
-  handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
-}
-export const Registered: FC = ({}) => {
+export const Registered = () => {
   const [toaster, setToaster] = useState(true);
-  const localStore = localStorage.getItem("comptrolla");
+  const localStore = localStorage.getItem('comptrolla');
   const parsed = JSON.parse(localStore as string);
   const email = parsed.email;
   const concealed = concealEmail(email);
@@ -38,7 +31,7 @@ export const Registered: FC = ({}) => {
         </div>
         <div className="form-control my-3 mx-3">
           <button className="btn bg-[rgb(0,208,130)] border-0" type="submit">
-            <Message set="bold" primaryColor="moccasin" size={20} />
+            <Message primaryColor="moccasin" set="bold" size={20} />
             <span className="mx-5 text-neutral-50 bg-neutral-500/25 py-2 px-4 rounded-md">
               {concealed}
             </span>
@@ -57,12 +50,12 @@ export const Registered: FC = ({}) => {
 
         <div className="form-control my-3 mx-3">
           <Link
-            href="/steptwo"
             className="btn bg-[rgb(40,116,252)] border-0"
+            href="/steptwo"
             type="submit"
           >
             <span className="mx-5 text-neutral-100">Proceed to Step 2</span>
-            <ChevronRightCircle set="bold" primaryColor="moccasin" />
+            <ChevronRightCircle primaryColor="moccasin" set="bold" />
           </Link>
         </div>
       </div>

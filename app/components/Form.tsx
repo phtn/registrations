@@ -1,19 +1,18 @@
-import { FC, FormEvent, LegacyRef, RefObject } from "react";
-import { ArrowRight, ChevronRight, ChevronRightCircle } from "react-iconly";
+import { FC, FormEvent, LegacyRef } from 'react';
 
 interface FormProps {
-  nameRef: LegacyRef<HTMLInputElement>;
   emailRef: LegacyRef<HTMLInputElement>;
-  phoneRef: LegacyRef<HTMLInputElement>;
   isLoading: boolean;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  nameRef: LegacyRef<HTMLInputElement>;
+  phoneRef: LegacyRef<HTMLInputElement>;
 }
 export const Form: FC<FormProps> = ({
-  nameRef,
   emailRef,
-  phoneRef,
   isLoading,
   handleSubmit,
+  nameRef,
+  phoneRef,
 }) => {
   return (
     <div className="card flex-shrink w-full max-w-sm shadow-1xl bg-base-100 glass my-6 mx-2">
@@ -26,11 +25,11 @@ export const Form: FC<FormProps> = ({
               </span>
             </label>
             <input
-              type="text"
-              placeholder=" Name"
               className="input input-bordered placeholder:text-slate-600 text-neutral-100"
-              ref={nameRef}
               maxLength={25}
+              placeholder=" Name"
+              ref={nameRef}
+              type="text"
             />
           </div>
           <div className="form-control">
@@ -40,11 +39,11 @@ export const Form: FC<FormProps> = ({
               </span>
             </label>
             <input
-              type="text"
-              placeholder=" Email"
               className="input input-bordered placeholder:text-slate-600 text-neutral-100"
-              ref={emailRef}
               maxLength={25}
+              placeholder=" Email"
+              ref={emailRef}
+              type="text"
             />
           </div>
           <div className="form-control">
@@ -54,12 +53,12 @@ export const Form: FC<FormProps> = ({
               </span>
             </label>
             <input
-              type="text"
+              className="input input-bordered placeholder:text-slate-600 text-neutral-100"
+              maxLength={11}
               pattern="\d*"
               placeholder=" 09XXXXXXXXX"
-              className="input input-bordered placeholder:text-slate-600 text-neutral-100"
               ref={phoneRef}
-              maxLength={11}
+              type="text"
             />
           </div>
           <div className="form-control mt-6">

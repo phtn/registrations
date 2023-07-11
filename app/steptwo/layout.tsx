@@ -1,11 +1,5 @@
-"use client";
-import { Nav } from "../components";
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  weight: ["400", "700", "900"],
-  subsets: ["latin-ext"],
-});
+'use client';
+import { Nav } from '../components';
 
 export default function NextStepLayout({
   children,
