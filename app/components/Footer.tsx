@@ -7,7 +7,7 @@ export const Footer = () => (
       People. Process. Technology.
     </h1>
     <Link href="https://comptrolla.com">
-      <Send set="bold" primaryColor="limegreen" />
+      <Send set="bold" primaryColor="rgb(0,208,130)" />
     </Link>
   </div>
 );

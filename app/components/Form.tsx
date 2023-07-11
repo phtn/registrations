@@ -1,4 +1,5 @@
 import { FC, FormEvent, LegacyRef, RefObject } from "react";
+import { ArrowRight, ChevronRight, ChevronRightCircle } from "react-iconly";
 
 interface FormProps {
   nameRef: LegacyRef<HTMLInputElement>;
@@ -15,12 +16,14 @@ export const Form: FC<FormProps> = ({
   handleSubmit,
 }) => {
   return (
-    <div className="card flex-shrink w-full max-w-sm shadow-1xl bg-base-100 glass">
+    <div className="card flex-shrink w-full max-w-sm shadow-1xl bg-base-100 glass my-6 mx-2">
       <form onSubmit={handleSubmit}>
         <div className="card-body content-center justify-items-center px-3">
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Your Name</span>
+              <span className="label-text text-[rgb(0,208,130)]">
+                Your Name
+              </span>
             </label>
             <input
               type="text"
@@ -32,7 +35,9 @@ export const Form: FC<FormProps> = ({
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Email Address</span>
+              <span className="label-text text-[rgb(0,208,130)]">
+                Email Address
+              </span>
             </label>
             <input
               type="text"
@@ -44,7 +49,9 @@ export const Form: FC<FormProps> = ({
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Phone Number</span>
+              <span className="label-text text-[rgb(0,208,130)]">
+                Phone Number
+              </span>
             </label>
             <input
               type="text"
@@ -56,11 +63,11 @@ export const Form: FC<FormProps> = ({
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-info" type="submit">
+            <button className="btn bg-[rgb(40,116,252)] border-0" type="submit">
               {isLoading ? (
-                <span className="loading loading-ring loading-sm text-neutral-100"></span>
+                <span className="loading loading-ring loading-lg text-[moccasin]"></span>
               ) : (
-                "submit"
+                <span className="text-neutral-100 text-lg">submit</span>
               )}
             </button>
           </div>

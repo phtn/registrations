@@ -8,7 +8,10 @@ interface MemberData {
 }
 
 export const register = async (memberData: MemberData) => {
-  await setDoc(doc(db, "bookkeepers", memberData.email), { ...memberData });
+  await setDoc(doc(db, "bookkeepers", memberData.email), {
+    ...memberData,
+    createdAt: Date.now(),
+  });
 };
 
 export function concealEmail(email: string): string {

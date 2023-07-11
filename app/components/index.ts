@@ -1,7 +1,8 @@
-import { Header } from "./Header";
-import { Form } from "./Form";
 import { Footer } from "./Footer";
+import { Form } from "./Form";
+import { Header } from "./Header";
+import { Toaster } from "./Toaster";
 import { Nav } from "./Nav";
 import { Registered } from "./Registered";
 
-export { Header, Form, Footer, Nav, Registered };
+export { Form, Footer, Header, Nav, Registered, Toaster };

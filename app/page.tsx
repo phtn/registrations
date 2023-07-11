@@ -1,12 +1,15 @@
 "use client";
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { register } from "@/utils/register";
-import { Header, Form, Footer, Nav, Registered } from "./components";
+import { emailValidator, phoneValidator, register } from "@/utils";
+import { Header, Form, Footer, Nav, Registered, Toaster } from "./components";
+import { CloseSquare } from "react-iconly";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
   const [registeredEmail, setRegisteredEmail] = useState();
+  const [invalidEmail, setInvalidEmail] = useState(false);
+  const [invalidPhone, setInvalidPhone] = useState(false);
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
@@ -15,10 +18,24 @@ export default function App() {
     setIsLoading(true);
     e.preventDefault();
 
+    if (!emailValidator(emailRef.current?.value as string)) {
+      setInvalidEmail(true);
+      setIsLoading(false);
+      setTimeout(() => setInvalidEmail(false), 3000);
+    }
+    if (!phoneValidator(phoneRef.current?.value as string)) {
+      setInvalidPhone(true);
+      setIsLoading(false);
+      setTimeout(() => setInvalidPhone(false), 3000);
+    }
     const member = {
       name: nameRef.current?.value as string,
-      email: emailRef.current?.value as string,
-      phone: phoneRef.current?.value as string,
+      email: emailValidator(emailRef.current?.value as string)
+        ? (emailRef.current?.value as string)
+        : "",
+      phone: phoneValidator(phoneRef.current?.value as string)
+        ? (phoneRef.current?.value as string)
+        : "",
       // * Member Type
       type: "bookkeeper",
     };
@@ -36,7 +53,6 @@ export default function App() {
         localStorage.setItem("comptrolla", JSON.stringify(storeValue));
       });
     }
-    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -52,9 +68,8 @@ export default function App() {
     <main>
       <Nav />
       <div className="bg-neutral-100 h-screen">
-        <div className="h-fit grid grid-cols-22 content-center justify-items-center px-2">
-          <Header />
-
+        <Header />
+        <div className="h-fit grid grid-cols-22 content-center justify-items-center mx-2">
           {isRegistered ? (
             <Registered />
           ) : (
@@ -68,6 +83,20 @@ export default function App() {
           )}
 
           <Footer />
+          {invalidEmail ? (
+            <Toaster
+              icon={0}
+              text="Enter a valid Email Address."
+              type="warning"
+            />
+          ) : null}
+          {invalidPhone ? (
+            <Toaster
+              icon={1}
+              text="Enter a valid Phone Number."
+              type="warning"
+            />
+          ) : null}
         </div>
       </div>
     </main>
