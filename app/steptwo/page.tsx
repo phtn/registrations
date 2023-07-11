@@ -46,7 +46,7 @@ export default function StepTwo() {
               </tbody>
             </table>
           </div>
-          <div className="card bg-base-100 glass my-10 mx-2 max-w-xl">
+          <div className="card bg-base-100 glass my-12 mx-2 p-2 max-w-lg">
             <div className="card-body">
               <span className="text-neutral-100 text-lg">
                 Complete all the requirements then proceed to{' '}

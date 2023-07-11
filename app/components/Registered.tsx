@@ -40,7 +40,7 @@ export const Registered = () => {
 
         <div className="divider"></div>
         <div className="py-1">
-          <span className="text-neutral-100 text-sm text-center flex bg-[moccasin]/25 p-3 rounded-xl ">
+          <span className=" italic text-neutral-100 text-sm text-center flex bg-[moccasin]/30 p-3 rounded-xl ">
             You will also receive an email for instructions to complete the next
             step.
           </span>

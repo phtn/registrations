@@ -33,7 +33,7 @@ export default function StepThree() {
                 in Quezon City and submit all your requirements.
               </span>
               <div className="divider"></div>
-              <span className="text-neutral-100 italic text-sm bg-[rgb(0,208,130)]/25 border-0 p-4 text-center rounded-xl mx-4">
+              <span className="text-neutral-100 italic text-sm bg-[moccasin]/30 border-0 p-4 text-center rounded-xl mx-4">
                 {' '}
                 If you have any questions regarding the process, please feel
                 free to contact us by phone and email.
