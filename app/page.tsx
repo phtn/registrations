@@ -3,7 +3,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { register } from "@/utils/register";
 import { Header, Form, Footer, Nav, Registered } from "./components";
 
-export default function Home() {
+export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
   const [registeredEmail, setRegisteredEmail] = useState();
