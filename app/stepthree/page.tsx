@@ -1,5 +1,5 @@
 'use client';
-import { Footer } from '../components';
+import { Footer, Header } from '../components';
 import Link from 'next/link';
 import {
   Calling,
@@ -13,14 +13,8 @@ export default function StepThree() {
   return (
     <main>
       <div className="h-full bg-neutral-100 content-center justify-items-center w-full">
-        <div className="h-fit grid grid-cols-20 justify-items-center bg-neutral-300 py-3 mb-6">
-          <span className="text-neutral-focus text-lg">
-            <span className="mx-2 font-semibold text-[rgb(40,116,252)]">
-              Step 3:
-            </span>
-            Submit Requirements
-          </span>
-        </div>
+        <Header step={3} title="Submit Requirements" />
+
         <div className="h-fit grid grid-cols-22 content-center justify-items-center bg-neutral-100">
           <div className="card bg-base-100 glass my-2 mx-2 max-w-xl">
             <div className="card-body mb-0">
@@ -41,13 +35,13 @@ export default function StepThree() {
               <div className="divider"></div>
             </div>
             <div className="flex flex-row m-4 align-middle content-center">
-              <Work primaryColor="rgb(0,208,130)" set="bold" size={25} />
+              <Work primaryColor="#5FBF81" set="bulk" size={25} />
               <span className="text-[moccasin] font-semibold mx-4">
                 Comptrolla Technologies, Inc
               </span>
             </div>
             <div className="flex flex-row m-4">
-              <Location primaryColor="rgb(0,208,130)" set="bold" size={25} />
+              <Location primaryColor="#5FBF81" set="bulk" size={25} />
               <span className="text-[moccasin] mx-4">
                 Suite 204, 2nd Floor, Tomasca Bldg. <br />
                 273 Col. Bonny Serrano Avenue <br />
@@ -55,13 +49,13 @@ export default function StepThree() {
               </span>
             </div>
             <div className="flex flex-row m-4">
-              <Calling primaryColor="rgb(0,208,130)" set="bold" size={25} />
+              <Calling primaryColor="#5FBF81" set="bulk" size={25} />
               <span className="text-[moccasin] mx-4">
                 7004-3581 <br />
               </span>
             </div>
             <div className="flex flex-row m-4">
-              <Message primaryColor="rgb(0,208,130)" set="bold" size={25} />
+              <Message primaryColor="#5FBF81" set="bulk" size={25} />
               <span className="text-[moccasin] mx-4">
                 hello@comptrolla.com <br />
               </span>
@@ -70,12 +64,12 @@ export default function StepThree() {
             <div className="divider"></div>
             <div className="form-control my-6 mx-3">
               <Link
-                className="btn bg-[rgb(40,116,252)] border-0"
+                className="btn btn-lg bg-[#5887DA] border-0"
                 href="https://comptrolla.com"
                 type="submit"
               >
                 <span className="mx-5 text-neutral-100">Learn More</span>
-                <ChevronRightCircle primaryColor="moccasin" set="bold" />
+                <ChevronRightCircle primaryColor="white" set="bulk" size={30} />
               </Link>
             </div>
           </div>

@@ -29,10 +29,10 @@ export const Registered = () => {
             registered your account with the email address below.
           </span>
         </div>
-        <div className="form-control my-3 mx-3">
-          <button className="btn bg-[rgb(0,208,130)] border-0" type="submit">
-            <Message primaryColor="moccasin" set="bold" size={20} />
-            <span className="mx-5 text-neutral-50 bg-neutral-500/25 py-2 px-4 rounded-md">
+        <div className="form-control my-3 mx-0">
+          <button className="btn btn-lg bg-[#5FBF81] border-0" type="submit">
+            <Message primaryColor="white" set="bulk" size={30} />
+            <span className="mx-3 text-neutral-50 bg-neutral-500/25 py-2 px-2 rounded-md">
               {concealed}
             </span>
           </button>
@@ -48,14 +48,14 @@ export const Registered = () => {
 
         <div className="divider"></div>
 
-        <div className="form-control my-3 mx-3">
+        <div className="form-control my-3">
           <Link
-            className="btn bg-[rgb(40,116,252)] border-0"
+            className="btn btn-lg bg-[#5887DA] border-0"
             href="/steptwo"
             type="submit"
           >
-            <span className="mx-5 text-neutral-100">Proceed to Step 2</span>
-            <ChevronRightCircle primaryColor="moccasin" set="bold" />
+            <span className="mx-3 text-neutral-100">Proceed to Step 2</span>
+            <ChevronRightCircle primaryColor="white" set="bulk" size={30} />
           </Link>
         </div>
       </div>

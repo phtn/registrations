@@ -66,7 +66,7 @@ export default function App() {
     <main>
       <Nav />
       <div className="bg-neutral-100 h-screen">
-        <Header />
+        <Header step={1} title="Bookkeeper Registration" />
         <div className="h-fit grid grid-cols-22 content-center justify-items-center mx-2">
           {isRegistered ? (
             <Registered />
